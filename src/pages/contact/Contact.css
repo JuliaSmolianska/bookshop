@@ -1,0 +1,24 @@
+.contact-page-button {
+  border: none;
+  margin: 0;
+  padding: 5px;
+  color: var(--branding-color);
+  text-decoration: none;
+}
+
+.contact-page-button:hover {
+background: var(--branding-color);
+color: white;
+}
+
+.contact-page-mail {
+  border: none;
+  margin: 0;
+  padding: 5px;
+  color: var(--branding-color);
+  text-decoration: none;
+}
+
+.contact-page-mail:hover {
+color: red;
+}

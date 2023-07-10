@@ -112,7 +112,7 @@ const novels = [
       language: "English",
       type: "Paperback",
     },
-    pris: "$14.88",
+    pris: 14.88,
     image:
       "https://images-us.bookshop.org/ingram/9780593336229.jpg?height=500&v=v2-db9d313f214c48e9b48a4f99038f34f0",
     aboutTheAuthor:

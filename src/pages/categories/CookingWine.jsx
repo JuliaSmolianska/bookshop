@@ -1,7 +1,7 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import cooking from "../pageHome/components/data/CookingWineData"
+import cooking from "../../data/CookingWineData"
 import BookCard from "./BookCard";
 
 const CookingWine = () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import comics from "../pageHome/components/data/ComicsData"
+import comics from "../../data/ComicsData"
 import BookCard from "./BookCard";
 
 const Comics = () => {

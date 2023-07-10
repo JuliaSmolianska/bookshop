@@ -1,53 +1,94 @@
 import React from "react";
-import Carousel from "better-react-carousel";
-import bestcellers from "./data/BestcellersData";
-import "./CarouselBest.css";
+import Col from "react-bootstrap/Col";
+import bestcellers from "../../..//data/BestcellersData";
+import BookCardCarousel from "../../categories/BookCardCarousel";
 import Container from "react-bootstrap/Container";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import "./CarouselBest.css"
 
-const CarouselBest = () => {
+const CarouselBest = ({ eachBook }) => {
+  function renderBook(_props) {
+    return bestcellers.map((eachBook) => {
+      return (
+        <BookCardCarousel
+          id={eachBook.id}
+          name={eachBook.name}
+          image={eachBook.image}
+          author={eachBook.author}
+          descriptionShort={eachBook.descriptionShort}
+          pris={eachBook.pris}
+          prisSup={eachBook.prisSup}
+          description={eachBook.description}
+          details={eachBook.details}
+          aboutTheAuthor={eachBook.aboutTheAuthor}
+          reviews1={eachBook.reviews1}
+          authorReviews1={eachBook.authorReviews1}
+          reviews2={eachBook.reviews2}
+          authorReviews2={eachBook.authorReviews2}
+          reviews3={eachBook.reviews3}
+          authorReviews3={eachBook.authorReviews3}
+        />
+      );
+    });
+  }
+
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+      slidesToSlide: 4,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 768 },
+      items: 3,
+      slidesToSlide: 3,
+    },
+
+    miniTablet: {
+      breakpoint: { max: 768, min: 464 },
+      items: 2,
+      slidesToSlide: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1,
+    },
+  };
   return (
-    <Container className="m-auto mb-5 p-0">
-      <h1 className="mx-5 mt-5 carousel-best-title">Best Sellers</h1>
-      <hr className="carousel-best-line mb-5" />
-      <Carousel
-        cols-md={2}
-        cols-xl={3}
-        cols={4}
-        rows={1}
-        gap={12}
-        loop
-        autoplay={4000}
-        mobileBreakpoint={768}
-        className="carousel-best m-auto text-center"
-      >
-        {bestcellers.map((bestceller) => {
-          return (
-            <Carousel.Item key={bestceller.id} className="m-5 m-auto">
-              <div className="carousel-best-container">
-                <img
-                  src={bestceller.image}
-                  alt={bestceller.name}
-                  className="carousel-best-img m-auto d-flex justify-content-between text-center mb-3"
-                />
-                <p className="carousel-best-pris">
-                  ${bestceller.pris}
-                  <sup className="carousel-best-pris-sup m-1">
-                    {bestceller.prisSup}
-                  </sup>
-                </p>
-              </div>
-              <div className="m-auto text-center">
-                <h5 className="carousel-best-author mx-4">{bestceller.name}</h5>
-                <h5 className="card-author fs-6 fst-italic">
-                  by {bestceller.author}
-                </h5>
-              </div>
-            </Carousel.Item>
-          );
-        })}
-      </Carousel>
-    </Container>
+    <Col className="pb-5 pt-5">
+      <Container>
+        <div className="m-auto mb-5 p-0">
+          <h1 className="mx-5 mt-5 carousel-best-title">Best Sellers</h1>
+          <hr className="carousel-best-line mb-5" />
+        </div>
+
+        <Carousel
+          swipeable={false}
+          draggable={false}
+          showDots={true}
+          responsive={responsive}
+          ssr={true} // means to render carousel on server-side.
+          infinite={true}
+          autoPlaySpeed={3000}
+          keyBoardControl={true}
+          customTransition="all .5"
+          transitionDuration={500}
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={"mobile"}
+          autoPlay={true}
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+        >
+          {renderBook()}
+        </Carousel>
+      </Container>
+    </Col>
   );
 };
-
 export default CarouselBest;

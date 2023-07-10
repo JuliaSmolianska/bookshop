@@ -1,7 +1,7 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import fantasy from "../pageHome/components/data/FantasyData"
+import fantasy from "../../data/FantasyData"
 import BookCard from "./BookCard";
 
 const Fantasy = () => {

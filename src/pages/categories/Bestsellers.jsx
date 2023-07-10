@@ -1,7 +1,7 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import bestcellers from "../pageHome/components/data/BestcellersData";
+import bestcellers from "../../data/BestcellersData";
 import BookCard from "./BookCard";
 
 const Bestcellers = () => {

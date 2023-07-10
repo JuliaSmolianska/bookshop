@@ -6,9 +6,7 @@ import "./HomePage.css";
 const HomePage = () => {
   return (
     <Col xs={12} className=" d-flex justify-content-end">
-      <Col xl={10} md={9} className="mt-5">
-        <CarouselBest />
-      </Col>
+      <CarouselBest />
     </Col>
   );
 };

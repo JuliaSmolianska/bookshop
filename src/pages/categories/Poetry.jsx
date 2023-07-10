@@ -1,7 +1,7 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import poetry from "../pageHome/components/data/PoetryData";
+import poetry from "../../data/PoetryData";
 import BookCard from "./BookCard";
 
 const Poetry = () => {

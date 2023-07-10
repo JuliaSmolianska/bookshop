@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import NavLink from "react-bootstrap/NavLink";
+import React, { useState } from "react";
+import { LinkContainer } from "react-router-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
@@ -8,19 +8,11 @@ import ContactForm from "./ContactForm";
 import SocialMedia from "./SocialMedia";
 import Subscribe from "./Subscribe";
 
-const Footer = () => {
+const Footer = ({ isOpen }) => {
   const [showContactForm, setShowContactForm] = useState(false);
-  const [buttonClick, setButtonClick] = useState(0);
-
-   useEffect(() => {
-    if (showContactForm) {
-      return;
-    }
-  }, [buttonClick]);
 
   const handleClick = () => {
     setShowContactForm(!showContactForm);
-    setButtonClick(buttonClick + 1);
   };
 
   return (
@@ -30,7 +22,7 @@ const Footer = () => {
         <Col sm={6} lg={4}>
           <h3 className="footerTitle p-2">Contacts</h3>
           <p>
-            Thanks for reaching out to Bookshop. In order to ensure you receive
+            Thanks for reaching out to StoreBooK. In order to ensure you receive
             a quick reply, please fill out our{" "}
             <span>
               <Button className="btnContactUs p-0" onClick={handleClick}>
@@ -44,18 +36,49 @@ const Footer = () => {
         </Col>
         <Col sm={6} lg={4} className="">
           <h3 className="footerTitle p-2">Store</h3>
-          <NavLink href="#" className="footerLink p-2">
-            Home
-          </NavLink>
-          <NavLink href="#" className="footerLink p-2">
-            Special offers
-          </NavLink>
-          <NavLink href="#" className="footerLink p-2">
-            Login
-          </NavLink>
-          <NavLink href="#" className="footerLink p-2">
-            Basket
-          </NavLink>
+          <div className="row">
+            <LinkContainer to="/">
+              <Button
+                variant="link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footerLink p-2"
+              >
+                Home
+              </Button>
+            </LinkContainer>
+            <LinkContainer to="/promotions">
+              <Button
+                variant="link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footerLink p-2"
+              >
+                Special offers
+              </Button>
+            </LinkContainer>
+            <LinkContainer to="/">
+              <Button
+                variant="link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footerLink p-2"
+              >
+                Login
+              </Button>
+            </LinkContainer>
+
+            <LinkContainer to="/about">
+              <Button
+                variant="link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footerLink p-2"
+              >
+                About Us
+              </Button>
+            </LinkContainer>
+          </div>
         </Col>
         <Col sm={6} lg={4} className="">
           <h3 className="footerTitle p-2">Newsletter</h3>
@@ -65,7 +88,7 @@ const Footer = () => {
       <Row className="footerBottom p-3 text-center">
         <h6>
           For partnerships, promotional opportunities, and advertising
-          inquiries, please email us at: promotions@bookshop.com
+          inquiries, please email us at: promotions@storebook.com
         </h6>
       </Row>
     </Col>

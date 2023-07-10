@@ -8,11 +8,20 @@
 .footerLink {
   font-size: larger;
   transition: 0.5s;
+  text-decoration: none;
+  text-align: left;
+  color: white;
 }
 .footerLink:hover {
   text-decoration: underline;
   opacity: 0.8;
+  color: white;
 }
+
+.footerLink:visited {
+  color: rgb(255, 255, 255);
+}
+
 .footerBottom {
   background-color: #50a3c4;
   color: white;

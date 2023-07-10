@@ -1,7 +1,7 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import thrillers from "../pageHome/components/data/ThrillersData";
+import thrillers from "../../data/ThrillersData";
 import BookCard from "./BookCard";
 
 const Thrillers = () => {
