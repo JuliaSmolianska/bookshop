@@ -14,12 +14,6 @@ const ContactForm = () => {
   const [showContactForm, setShowContactForm] = useState(true);
   const [buttonClick, setButtonClick] = useState(0);
 
-  useEffect(() => {
-    if (showContactForm) {
-      return;
-    }
-  }, [buttonClick]);
-
   const handleClick = () => {
     setShowContactForm(!showContactForm);
     setButtonClick(buttonClick + 1);

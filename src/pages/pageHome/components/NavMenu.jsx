@@ -11,12 +11,6 @@ function NavMenu() {
   const [buttonClick, setButtonClick] = useState(0);
   const expand = "md";
 
-  useEffect(() => {
-    if (showDiv) {
-      return;
-    }
-  }, [buttonClick]);
-
   const handleClick = () => {
     setShowDiv(!showDiv);
     setButtonClick(buttonClick + 1);
