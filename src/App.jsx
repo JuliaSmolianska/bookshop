@@ -26,7 +26,6 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./pages/contact/Contact";
 
-
 const App = () => {
   return (
     <BookContextProvider>
