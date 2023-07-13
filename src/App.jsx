@@ -29,7 +29,8 @@ import Contact from "./pages/contact/Contact";
 const App = () => {
   return (
     <BookContextProvider>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}> 
+      {/* https://create-react-app.dev/docs/adding-custom-environment-variables/ */}
         <Container fluid className="App">
           <Header />
           <Routes>

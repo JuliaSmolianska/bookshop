@@ -1,5 +1,11 @@
 import React, { createContext, useState, useEffect } from "react";
 
+// JSDoc: https://jsdoc.app/tags-typedef.html
+// useful tags: @type - for defining the type of the variable on the next line
+// @typedef - for defining a subtype
+// @param - for defining a type of a function parameter
+// @returns - for defining the type of variable that a function returns
+
 export const BookContext = createContext({
   state: {
     cart: [
@@ -16,13 +22,26 @@ export const BookContext = createContext({
   decrease: (id) => {},
 });
 
+
+export const LOCAL_STORAGE_NAME = "book_personal_site_items";
+
 export const BookContextProvider = ({ children }) => {
-  const [state, setState] = useState({
-    cart: [],
-  });
+  /**
+   * @typedef {{id: string, image: string, pris: null | number}} CartElement
+   * @type {{cart: CartElement[]} | undefined}
+   */
+  let storedItems = JSON.parse(localStorage.getItem(LOCAL_STORAGE_NAME));
+   if (storedItems && storedItems.cart && Array.isArray(storedItems.cart)) {
+    // do nothing. all is good
+   } else {
+    storedItems = {cart: []};
+  };
+  console.log(storedItems);
+  const [state, setState] = useState(storedItems);
 
   useEffect(() => {
     console.log(state);
+    localStorage.setItem(LOCAL_STORAGE_NAME, JSON.stringify(state));
   }, [state]);
 
   const addToCart = (book) => {

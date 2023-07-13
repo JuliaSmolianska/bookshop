@@ -7,25 +7,7 @@ import BookCard from "./BookCard";
 const Thrillers = () => {
   function renderBook(_props) {
     return thrillers.map((eachBook) => {
-      return (
-        <BookCard
-          id={eachBook.id}
-          name={eachBook.name}
-          image={eachBook.image}
-          author={eachBook.author}
-          descriptionShort={eachBook.descriptionShort}
-          pris={eachBook.pris}
-          description={eachBook.description}
-          details={eachBook.details}
-          aboutTheAuthor={eachBook.aboutTheAuthor}
-          reviews1={eachBook.reviews1}
-          authorReviews1={eachBook.authorReviews1}
-          reviews2={eachBook.reviews2}
-          authorReviews2={eachBook.authorReviews2}
-          reviews3={eachBook.reviews3}
-          authorReviews3={eachBook.authorReviews3}
-        />
-      );
+      return <BookCard {...eachBook} />;
     });
   }
   return (
