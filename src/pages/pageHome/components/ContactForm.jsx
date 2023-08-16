@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Modal from "react-bootstrap/Modal";
 
-const ContactForm = () => {
+const ContactForm = ({resetParentState}) => { // ! resetParentState must exists as a function!
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -17,6 +17,7 @@ const ContactForm = () => {
   const handleClick = () => {
     setShowContactForm(!showContactForm);
     setButtonClick(buttonClick + 1);
+    resetParentState(false);
   };
 
   function handleNameChange(event) {
@@ -46,8 +47,6 @@ const ContactForm = () => {
   function handleSubmit(event) {
     event.preventDefault();
     setShowContactForm(false);
-    //console.log(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
-    //console.log('File:', file);
   }
   return (
     <div>

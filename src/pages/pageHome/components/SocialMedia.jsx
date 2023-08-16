@@ -11,7 +11,7 @@ const SocialMedia = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="bi bi-twitter media-links fs-3 text-white"></i>
+        <i className="bi bi-twitter media-links fs-3 text-white"></i>
       </Button>
       <Button
         variant="link"
@@ -19,7 +19,7 @@ const SocialMedia = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="bi bi-facebook media-links fs-3 text-white"></i>
+        <i className="bi bi-facebook media-links fs-3 text-white"></i>
       </Button>
       <Button
         variant="link"
@@ -27,7 +27,7 @@ const SocialMedia = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="bi bi-instagram media-links fs-3 text-white"></i>
+        <i className="bi bi-instagram media-links fs-3 text-white"></i>
       </Button>
     </ButtonGroup>
   );

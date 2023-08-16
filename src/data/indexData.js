@@ -9,6 +9,8 @@ import novels from "./NovelsData";
 import poetry from "./PoetryData";
 import trillers from "./ThrillersData";
 
+export * from "./util";
+
 export const allData = [
   ...bestcellers,
   ...comics,

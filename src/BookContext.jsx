@@ -25,6 +25,9 @@ export const BookContext = createContext({
 
 export const LOCAL_STORAGE_NAME = "book_personal_site_items";
 
+/**
+ * @param {{children: any[]}} props
+ */
 export const BookContextProvider = ({ children }) => {
   /**
    * @typedef {{id: string, image: string, pris: null | number}} CartElement
@@ -35,7 +38,7 @@ export const BookContextProvider = ({ children }) => {
     // do nothing. all is good
    } else {
     storedItems = {cart: []};
-  };
+  }
   console.log(storedItems);
   const [state, setState] = useState(storedItems);
 

@@ -28,6 +28,7 @@ const CarouselBest = ({ eachBook }) => {
           authorReviews2={eachBook.authorReviews2}
           reviews3={eachBook.reviews3}
           authorReviews3={eachBook.authorReviews3}
+          key={eachBook.id}
         />
       );
     });

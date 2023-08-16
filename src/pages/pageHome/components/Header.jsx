@@ -1,28 +1,27 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
 import Basket from "./Basket";
 import Search from "./Search";
+import {
+  SignInButton,
+  SignedIn,
+  UserButton,
+  useAuth,
+} from "@clerk/clerk-react";
 
 const Header = () => {
+  const { userId, sessionId, getToken, isLoaded, isSignedIn, signOut } =
+    useAuth();
+  if (isLoaded) {
+    console.log(userId);
+  }
   return (
     <Container className="header mb-4">
       <Row md="auto">
         <Search />
         <Col lg="3" xxl="2" className="login-button">
-          <p>
-            <i className="bi bi-person ps-2 pe-2 fs-3"></i>
-            Welcome,
-            <Button
-              variant="link"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Guest
-            </Button>
-          </p>
+          {!isSignedIn ? <SignInButton /> : <UserButton />}
         </Col>
         <Basket />
       </Row>

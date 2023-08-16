@@ -43,7 +43,7 @@ const Basket = () => {
   return (
     <Col lg="3" xxl="2">
       <p>
-        <i class="bi bi-cart-check ps-2 pe-2 fs-4"></i>
+        <i className="bi bi-cart-check ps-2 pe-2 fs-4"></i>
         Shopping Cart ({totalCartCount}),
         <Button variant="link" rel="noopener noreferrer" onClick={openModal}>
           ({totalCartAmount})$
@@ -57,7 +57,7 @@ const Basket = () => {
           <button onClick={closeModal} className="close-button">
             X
           </button>
-          <Col md={12} key={"some-random-key"} className="pb-3">
+          <Col md={12} className="pb-3">
             <Col className="card-main pt-3 ps-0 pe-0">
               {context.state.cart.map((book) => (
                 <Row key={book.id}>

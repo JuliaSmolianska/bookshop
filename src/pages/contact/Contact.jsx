@@ -23,7 +23,7 @@ const Contact = () => {
   return (
     <Col xl={10} md={9} sm={12} className="mt-4">
       <Container className="m-auto mb-5 p-0 text-center w-75 fs-6">
-        {showContactForm && <ContactForm />}
+        {showContactForm && <ContactForm resetParentState={setShowContactForm} />}
         <p>
           Thanks for reaching out to Bookshop. In order to ensure you receive a
           quick reply, please fill out our{" "}

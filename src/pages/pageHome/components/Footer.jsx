@@ -17,7 +17,7 @@ const Footer = ({ isOpen }) => {
 
   return (
     <Col xs={12}>
-      {showContactForm && <ContactForm />}
+      {showContactForm && <ContactForm resetParentState={setShowContactForm}/>}
       <Row className="footerBox justify-content-evenly p-2">
         <Col sm={6} lg={4}>
           <h3 className="footerTitle p-2">Contacts</h3>

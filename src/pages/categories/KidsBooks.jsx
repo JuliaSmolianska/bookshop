@@ -3,11 +3,13 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import kidsBooks from "../../data/KidsBooksData";
 import BookCard from "./BookCard";
+import { addReviewsToData } from "../../data/indexData";
 
 const KidsBooks = () => {
   function renderBook(_props) {
+    addReviewsToData(kidsBooks);
     return kidsBooks.map((eachBook) => {
-      return <BookCard {...eachBook} />;
+      return <BookCard {...eachBook} key={eachBook.id} />;
     });
   }
   return (

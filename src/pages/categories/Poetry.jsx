@@ -3,13 +3,13 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import poetry from "../../data/PoetryData";
 import BookCard from "./BookCard";
+import { addReviewsToData } from "../../data/indexData";
 
 const Poetry = () => {
   function renderBook(_props) {
+    addReviewsToData(poetry);
     return poetry.map((eachBook) => {
-      return (
-        <BookCard {...eachBook} />
-      );
+      return <BookCard {...eachBook} key={eachBook.id} />;
     });
   }
   return (

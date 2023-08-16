@@ -27,6 +27,7 @@ const comics = [
     authorReviews2: "",
     reviews3: "",
     authorReviews3: "",
+    review: [{reviewText: "new review", reviewAuthor:"Yuliia"}],
   },
 
   {

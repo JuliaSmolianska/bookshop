@@ -6,15 +6,15 @@ const Subheader = () => {
   return (
     <Carousel variant="dark" className="boxCarousel">
       <Carousel.Item>
-        <div class="d-flex justify-content-center mt-5">
-          <div class="col-md-6">
+        <div className="d-flex justify-content-center mt-5">
+          <div className="col-md-6">
             <img
               src="images/caruesel1.jpg"
-              class="d-block w-75 m-auto"
+              className="d-block w-75 m-auto"
               alt="..."
             />
           </div>
-          <div class="col-md-6 col-xl-4 d-none d-md-block">
+          <div className="col-md-6 col-xl-4 d-none d-md-block">
             <h5 className="text-center mb-3">
               I Cook in Color: Bright Flavors from My Kitchen and Around the
               World
@@ -26,7 +26,7 @@ const Subheader = () => {
               critically acclaimed cookbook My Two Souths.
             </p>
             <div className="d-flex justify-content-center pt-3">
-              <button type="button" class="btn btn-dark rounded-pill ps-4 pe-4">
+              <button type="button" className="btn btn-dark rounded-pill ps-4 pe-4">
                 Read more
               </button>
             </div>
@@ -34,15 +34,15 @@ const Subheader = () => {
         </div>
       </Carousel.Item>
       <Carousel.Item>
-        <div class="d-flex justify-content-center mt-5">
-          <div class="col-md-6">
+        <div className="d-flex justify-content-center mt-5">
+          <div className="col-md-6">
             <img
               src="images/caruesel2.jpg"
-              class="d-block w-75 m-auto"
+              className="d-block w-75 m-auto"
               alt="..."
             />
           </div>
-          <div class="col-md-6 col-xl-4 d-none d-md-block">
+          <div className="col-md-6 col-xl-4 d-none d-md-block">
             <h5 className="text-center">
               Dear Girl,: A Celebration of Wonderful, Smart, Beautiful You!
             </h5>
@@ -55,7 +55,7 @@ const Subheader = () => {
               girl in your life.
             </p>
             <div className="d-flex justify-content-center pt-3">
-              <button type="button" class="btn btn-dark rounded-pill ps-4 pe-4">
+              <button type="button" className="btn btn-dark rounded-pill ps-4 pe-4">
                 Read more
               </button>
             </div>
@@ -63,11 +63,11 @@ const Subheader = () => {
         </div>
       </Carousel.Item>
       <Carousel.Item>
-        <div class="d-flex justify-content-center mt-5">
-          <div class="col-md-6">
-            <img src="images/caruesel3.jpg" class="d-block w-75 m-auto" alt="slide1" />
+        <div className="d-flex justify-content-center mt-5">
+          <div className="col-md-6">
+            <img src="images/caruesel3.jpg" className="d-block w-75 m-auto" alt="slide1" />
           </div>
-          <div class="col-md-6 col-xl-4 d-none d-md-block">
+          <div className="col-md-6 col-xl-4 d-none d-md-block">
             <h5 className="text-center">
               The Umayyad Mosque of Damascus: Art, Faith and Empire in Early
               Islam
@@ -81,7 +81,7 @@ const Subheader = () => {
               temple of Jupiter.
             </p>
             <div className="d-flex justify-content-center pt-3">
-              <button type="button" class="btn btn-dark rounded-pill ps-4 pe-4">
+              <button type="button" className="btn btn-dark rounded-pill ps-4 pe-4">
                 Read more
               </button>
             </div>

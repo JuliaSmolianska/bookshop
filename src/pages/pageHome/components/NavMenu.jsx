@@ -36,8 +36,8 @@ function NavMenu() {
                   <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
-                  <p class="mb-0" onClick={handleClick}>
-                    Categories <i class="bi bi-chevron-down"></i>
+                  <p className="mb-0" onClick={handleClick}>
+                    Categories <i className="bi bi-chevron-down"></i>
                   </p>
                   {showDiv && (
                     <ul className="submenu" style={{ display: "block" }}>

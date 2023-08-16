@@ -3,13 +3,13 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import historicalFiction from "../../data/HistoricalFictionData";
 import BookCard from "./BookCard";
+import { addReviewsToData } from "../../data/indexData";
 
 const HistoricalFiction = () => {
   function renderBook(_props) {
+    addReviewsToData(historicalFiction);
     return historicalFiction.map((eachBook) => {
-      return (
-        <BookCard {...eachBook} />
-      );
+      return <BookCard {...eachBook} key={eachBook.id} />;
     });
   }
   return (

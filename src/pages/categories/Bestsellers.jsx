@@ -3,9 +3,11 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import bestcellers from "../../data/BestcellersData";
 import BookCard from "./BookCard";
+import { addReviewsToData } from "../../data/indexData";
 
 const Bestcellers = () => {
   function renderBook(_props) {
+    addReviewsToData(bestcellers);
     return bestcellers.slice(0, 6).map((eachBook) => {
       return (
         // <BookCard
@@ -25,7 +27,7 @@ const Bestcellers = () => {
         //   reviews3={eachBook.reviews3}
         //   authorReviews3={eachBook.authorReviews3}
         // />
-        <BookCard {...eachBook} /> // alternative to the above approach ^
+        <BookCard {...eachBook} key={eachBook.id} /> // alternative to the above approach ^
       );
     });
   }

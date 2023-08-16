@@ -8,6 +8,7 @@ import Modal from "react-modal";
 import { useState, useContext } from "react";
 import { BookContext } from "../../BookContext";
 import "./BookCard.css";
+import Reviews from "../pageHome/components/Reviews";
 
 const customStyles = {
   content: {
@@ -36,10 +37,12 @@ const BookCard = ({
   authorReviews2,
   reviews3,
   authorReviews3,
+  review,
 }) => {
   const context = useContext(BookContext);
 
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [forceAppData, setForceAppData] = useState(true);
 
   const handleClick = () => {
     setIsOpen(true);
@@ -59,6 +62,10 @@ const BookCard = ({
     };
   }
 
+  function addReview(name, message) {
+    review.push({ reviewText: message, reviewAuthor: name });
+    setForceAppData(!forceAppData);
+  }
   return (
     <Col sm="auto" className="col-xxl-4 col-xl-4 col-lg-6 m-auto">
       <Card
@@ -99,7 +106,7 @@ const BookCard = ({
             BUY NOW
           </Button>
           <Button variant="link" className="price-button fw-bold">
-            ${(pris).toFixed(2)}
+            ${pris.toFixed(2)}
           </Button>
         </ButtonGroup>
 
@@ -121,7 +128,7 @@ const BookCard = ({
                   alt={name}
                   className="img-hover"
                 />
-                <h3 className="mt-4 text-center">Prise: {(pris).toFixed(2)}</h3>
+                <h3 className="mt-4 text-center">Prise: {pris.toFixed(2)}</h3>
                 <Button
                   variant="link"
                   className="buy-button fw-bold mt-3 w-100"
@@ -181,7 +188,19 @@ const BookCard = ({
                   <b>{authorReviews3}</b>
                 </i>
               </p>
+              {review &&
+                review.map((eachReview, index) => {
+                  return (
+                    <p key={index}>
+                      {eachReview.reviewText}{" "}
+                      <i>
+                        <b>{eachReview.reviewAuthor}</b>
+                      </i>
+                    </p>
+                  );
+                })}
             </Col>
+            <Reviews addReview={addReview} />
           </Col>
         </Modal>
       </Card>

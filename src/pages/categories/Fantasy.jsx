@@ -1,15 +1,15 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import fantasy from "../../data/FantasyData"
+import fantasy from "../../data/FantasyData";
 import BookCard from "./BookCard";
+import { addReviewsToData } from "../../data/indexData";
 
 const Fantasy = () => {
   function renderBook(_props) {
+    addReviewsToData(fantasy);
     return fantasy.map((eachBook) => {
-      return (
-        <BookCard {...eachBook} />
-      );
+      return <BookCard {...eachBook} key={eachBook.id} />;
     });
   }
   return (
